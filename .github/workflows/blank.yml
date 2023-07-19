@@ -15,5 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: set python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.8" 
+
     - name: shell
       run: bash upload.sh
