@@ -4,7 +4,13 @@ on: push
 
 jobs:
   build:
-    runs-on: [macOS-11, macOS-latest]
+    runs-on: ${{matrix.os}}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [16]
+        os: [macOS-11, macOS-latest]
     
     steps:
     - uses: actions/checkout@v1
