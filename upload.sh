@@ -30,7 +30,7 @@ if [ "$(command -v ampy)" ]; then
     echo "Adafruit-ampy 已安装，版本为 $(ampy --version)"
 else
     echo "Adafruit-ampy 未安装，正在安装..."
-    pythonExe -m pip install Adafruit-ampy
+    $pythonExe -m pip install Adafruit-ampy
 fi
 
 # 检查 PySerial 是否已安装
@@ -38,7 +38,7 @@ if $pythonExe -c "import serial" &>/dev/null; then
     echo "PySerial 已安装，版本为 $($pythonExe -c "import serial; print(serial.VERSION)")"
 else
     echo "PySerial 未安装，正在安装..."
-    pythonExe -m pip install pyserial
+    $pythonExe -m pip install pyserial
 fi
 
 $pythonExe $port $micropyserver $utils $mainFile
