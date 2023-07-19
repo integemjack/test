@@ -4,19 +4,10 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [macOS-11, macOS-latest]
     
     steps:
     - uses: actions/checkout@v1
 
-    - name: Cache Primes
-      id: cache-primes
-      uses: actions/cache@v1
-      with:
-        path: prime-numbers
-        key: ${{ runner.os }}-primes
-
-    - name: Generate Prime Numbers
-      env:
-        value: ${{toJSON(steps.cache-primes.outputs)}} 
-      run: echo $value
+    - name: shell
+      run: bash upload.sh
