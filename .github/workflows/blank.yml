@@ -18,7 +18,7 @@ jobs:
     - name: set python
       uses: actions/setup-python@v4
       with:
-        python-version: "3.8" 
+        python-version: "3.11" 
 
     - name: shell
       run: bash upload.sh
