@@ -21,4 +21,4 @@ jobs:
         python-version: "3.11" 
 
     - name: shell
-      run: bash upload.sh
+      run: bash image.sh
